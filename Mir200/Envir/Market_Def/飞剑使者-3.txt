@@ -1,0 +1,124 @@
+
+[@main]
+#ACT
+LUAINT S0 feijian.FeijianGetLevel
+LUAINT S1 feijian.FeijianGetSpeed
+LUAINT S2 feijian.FeijianGetDamage
+LUAINT S3 feijian.FeijianGetCooldown
+#SAY
+<您好[<$USERNAME>]！/SCOLOR=250>  您当前飞剑熟：<【<$STR(U599)>】/SCOLOR=249>  \
+速度：<【<$STR(U598)>%】/SCOLOR=250>，伤害：<【<$STR(U597)>%】/SCOLOR=254>，冷却：<【<$STR(U596)>%】/SCOLOR=251> \ 
+<-------------------飞-剑-学-习-----------------/SCOLOR=250> \
+<学习一把飞剑/@learn1>     <升级三把飞剑/@learn3>     <升级五把飞剑/@learn5>\
+<-------------------飞-剑-强-化-----------------/SCOLOR=249> \
+<恢复原速/@speed100>   <强化2倍速/@speed200>     <强化3倍速/@speed300>     <强化5倍速/@speed500>\
+<恢复伤害/@dmg100>   <强化2倍伤害/@dmg200>   <强化5倍伤害/@dmg500>   <强化10倍伤害/@dmg1000>\
+<恢复冷却/@cd100>   <强化2倍冷却/@cd200>   <强化3倍冷却/@cd300>   <强化5倍冷却/@cd500>\
+
+<同步飞剑状态/@sync>    <遗忘飞剑/@forget>\
+
+
+[@learn1]
+#ACT
+LUACALL feijian.FeijianSetLevel 1
+GOTO @main
+
+[@learn3]
+#ACT
+LUACALL feijian.FeijianSetLevel 3
+GOTO @main
+
+[@learn5]
+#ACT
+LUACALL feijian.FeijianSetLevel 5
+GOTO @main
+
+[@sync]
+#ACT
+LUACALL feijian.FeijianSync
+GOTO @main
+
+[@speed100]
+#ACT
+LUACALL feijian.FeijianSetSpeed 100
+GOTO @main
+
+[@speed200]
+#ACT
+LUACALL feijian.FeijianSetSpeed 200
+GOTO @main
+
+[@speed300]
+#ACT
+LUACALL feijian.FeijianSetSpeed 300
+GOTO @main
+
+[@speed500]
+#ACT
+LUACALL feijian.FeijianSetSpeed 500
+GOTO @main
+
+[@dmg100]
+#ACT
+LUACALL feijian.FeijianSetDamage 100
+GOTO @main
+
+[@dmg200]
+#ACT
+LUACALL feijian.FeijianSetDamage 200
+GOTO @main
+
+[@dmg500]
+#ACT
+LUACALL feijian.FeijianSetDamage 500
+GOTO @main
+
+[@dmg1000]
+#ACT
+LUACALL feijian.FeijianSetDamage 1000
+GOTO @main
+
+[@cd100]
+#ACT
+LUACALL feijian.FeijianSetCooldown 100
+GOTO @main
+
+[@cd200]
+#ACT
+LUACALL feijian.FeijianSetCooldown 200
+GOTO @main
+
+[@cd300]
+#ACT
+LUACALL feijian.FeijianSetCooldown 300
+GOTO @main
+
+[@cd500]
+#ACT
+LUACALL feijian.FeijianSetCooldown 500
+GOTO @main
+
+[@target1]
+#ACT
+LUACALL feijian.FeijianSetTargets 1
+GOTO @main
+
+[@target2]
+#ACT
+LUACALL feijian.FeijianSetTargets 2
+GOTO @main
+
+[@target3]
+#ACT
+LUACALL feijian.FeijianSetTargets 3
+GOTO @main
+
+[@target4]
+#ACT
+LUACALL feijian.FeijianSetTargets 4
+GOTO @main
+
+[@forget]
+#ACT
+LUACALL feijian.FeijianSetLevel 0
+GOTO @main
