@@ -1,0 +1,34 @@
+
+[@Main]
+输入格式：  物品名称|玩家名字\
+<清理背包/@@InputString1(请输入名称：)>\
+<清理仓库/@@InputString2(请输入名称：)>\
+
+
+[@InputString1]
+#IF
+Equal S1
+#ACT
+SENDMSG 6 请输入一个正确的名称
+Break
+
+#IF
+#ACT
+TextSplit | <$STR(S1)> S10 N$无用
+MOV A10 <$STR(S10)>
+MOV A11 <$STR(S11)>
+Gmexecute 开始提问 @清除背包
+
+[@InputString2]
+#IF
+Equal S2
+#ACT
+SENDMSG 6 请输入一个正确的名称
+Break
+
+#IF
+#ACT
+TextSplit | <$STR(S2)> S10 N$无用
+MOV A10 <$STR(S10)>
+MOV A11 <$STR(S11)>
+Gmexecute 开始提问 @清除仓库

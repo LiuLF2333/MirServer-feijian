@@ -1,0 +1,1 @@
+2026/8/2 21:47:06 [Exception] 服务器启动异常！！！找不到文件 'D:\Mirserver\Mud2\DB\HeroDB.MDB'。
